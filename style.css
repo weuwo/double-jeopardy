@@ -1,0 +1,262 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+  background: #BFD6C1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* --------------NEW-------------- */
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+  line-height: 20px;
+}
+
+h1 {
+  font-size: 18px;
+  line-height: 15px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 55px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+/* main content container */
+.content {
+    flex: 10 auto;;
+    padding: 25px 25px 0 25px;
+}
+
+/* sticky navigation bar */
+.nav {
+    display: flex; 
+    justify-content: space-evenly;
+    flex-shrink: 0;
+    width: 100%;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid black;
+
+}
+
+.container {
+    margin: 0 auto;
+    width: 250px;
+    height: 200px;
+    position: relative;
+    perspective: 1000px;
+    transform: translate(0px, 30vh);
+  }
+  
+  .carousel {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+  
+  .item {
+    display: block;
+    position: absolute;
+    background: #000;
+    width: 250px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 5em;
+    text-align: center;
+    color: #FFF;
+    opacity: 0.95;
+  }
+  
+  .a {
+    transform: rotateY(0deg) translateZ(250px);
+    background: #ed1c24;
+  }
+  .b {
+    transform: rotateY(60deg) translateZ(250px);
+    background: #0072bc;
+  }
+  .c {
+    transform: rotateY(120deg) translateZ(250px);
+    background: #39b54a;
+  }
+  .d {
+    transform: rotateY(180deg) translateZ(250px);
+    background: #f26522;
+  }
+  .e {
+    transform: rotateY(240deg) translateZ(250px);
+    background: #630460;
+  } 
+  .f {
+    transform: rotateY(300deg) translateZ(250px);
+    background: #8c6239;
+  }
+  
+  .next, .prev {
+    color: #444;
+    position: absolute;
+    top: 100px;
+    padding: 1em 2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.719);
+    transform: translate(0px, 30vh);
+  }
+  .next:hover, .prev:hover { color: #000; }
+  .next:active, .prev:active {
+    top: 104px;
+    box-shadow: 0 1px 0 #999;
+  }
+  .next { right: 2em; }
+  .prev { left: 2em; }
+
+ .dropdown-btn {
+    display: block;
+    width: 130px;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.719);
+    cursor: pointer;
+    text-align: left;
+ }
+
+ .dropdown-btn::after {
+    content: '\25be';
+    float: right;
+ }
+
+ .dropdown-btn--active {
+    display: block;
+    width: 250px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 25px 25px 0 0;
+    text-align: left;
+ }
+
+ .dropdown-btn--active::after {
+    content: '\25b4';
+    float: right;
+ }
+
+ .dropdown-content {
+    display: none;
+    overflow: hidden;
+    padding: 15px;
+    padding-bottom: 30px;
+    max-height: 100px;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.719);
+    border-radius: 0 0 25px 25px;
+    transition: max-height 0.2s;
+ }
+
+ .back-btn {
+  width: 80px;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.719);
+  cursor: pointer;
+  text-align: center;
+  float: right;
+}
+
+.back-container {
+  grid-area: back;
+}
+ 
+
+ /* ---- about ---- */
+
+ .grid-container {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-template-areas:
+   "back back"
+   "img content"
+ }
+
+ .about-item {
+   margin: 20px;
+ }
+
+ .about-item-1 {
+   width: 30;
+   grid-area: img;
+ }
+
+ .about-item-2 {
+   grid-area: content;
+}
+
+ .about-container img {
+   width: 20vw;
+   }
